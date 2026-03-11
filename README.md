@@ -16,6 +16,8 @@ This template includes:
 - Fully responsive layout for mobile, tablet, desktop, and large screens
 - Data-first customization via dedicated config files in `src/data`
 
+  Live Demo : https://glassmorphism-portfolio-two.vercel.app/
+
 ## Tech Stack
 
 - React
