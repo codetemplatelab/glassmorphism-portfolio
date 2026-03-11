@@ -1,0 +1,43 @@
+﻿.orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(0px);
+  opacity: 0.6;
+  animation: float 16s ease-in-out infinite;
+}
+
+.orb-cyan {
+  width: 420px;
+  height: 420px;
+  top: -140px;
+  left: -120px;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.45), rgba(56, 189, 248, 0));
+}
+
+.orb-violet {
+  width: 520px;
+  height: 520px;
+  bottom: -220px;
+  right: -180px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.45), rgba(124, 58, 237, 0));
+  animation-delay: -6s;
+}
+
+.orb-slate {
+  width: 360px;
+  height: 360px;
+  top: 30%;
+  right: 15%;
+  background: radial-gradient(circle, rgba(15, 23, 42, 0.5), rgba(15, 23, 42, 0));
+  animation-delay: -12s;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -24px, 0);
+  }
+}

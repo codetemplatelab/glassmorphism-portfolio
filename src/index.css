@@ -1,0 +1,81 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+@layer base {
+  * {
+    @apply border-white/10;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-midnight font-body text-slate-100 antialiased;
+  }
+
+  a {
+    @apply transition-colors;
+  }
+}
+
+@layer components {
+  .section-shell {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-space {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+
+  .glass-panel {
+    @apply rounded-3xl border border-white/10 bg-white/5 p-6 shadow-glass backdrop-blur-glass;
+    transition: transform 0.45s ease, box-shadow 0.45s ease, border-color 0.45s ease;
+    will-change: transform;
+    position: relative;
+    overflow: hidden;
+  }
+}
+
+.glass-panel::after {
+  content: '';
+  position: absolute;
+  inset: -40% -10% auto -60%;
+  height: 220%;
+  background: linear-gradient(120deg, transparent 35%, rgba(255, 255, 255, 0.18), transparent 65%);
+  transform: translateX(-60%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.glass-panel:hover::after {
+  opacity: 1;
+  animation: sheen 1.2s ease;
+}
+
+@keyframes sheen {
+  0% {
+    transform: translateX(-60%);
+  }
+  100% {
+    transform: translateX(40%);
+  }
+}
+
+.grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(circle at 50% 20%, rgba(0, 0, 0, 0.6), transparent 65%);
+  opacity: 0.4;
+}
